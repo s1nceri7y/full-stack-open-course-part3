@@ -4,7 +4,6 @@ const cors = require('cors')
 
 const app = express()
 app.use(express.json())
-// app.use(cors)
 
 morgan.token('body', function (req, res) {return JSON.stringify(req.body)})
 let morganConf = ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :body ":referrer" ":user-agent"'
@@ -104,6 +103,7 @@ const unknownEndpoint = (request, response) => {
 app.use(unknownEndpoint)
 
 const PORT = process.env.PORT || 3001
+app.use(cors)
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
