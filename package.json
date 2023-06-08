@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo 'tests are not implemented!'"
+    "test": "echo 'tests are not implemented!'",
+    "build:ui": "rm -rf build && cd ../fullstack-open-course/part2/phonebook && npm run build && cp -r build ../../../fullstack-open-course-part3/",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "o1",
   "license": "MIT",
