@@ -1,0 +1,26 @@
+GET http://localhost:3005/api/persons/
+###
+GET http://localhost:3005/api/persons/1
+###
+GET http://localhost:3005/api/persons/6
+###
+GET http://localhost:3005/info
+###
+GET http://localhost:3005/unexistingEndpoint
+###
+DELETE http://localhost:3005/api/persons/2
+###
+POST http://localhost:3005/api/persons/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "oh yea"
+}
+###
+POST http://localhost:3005/api/persons/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "oh yea",
+    "number": "3333"
+}
