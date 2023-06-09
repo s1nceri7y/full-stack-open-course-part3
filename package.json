@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+    "dev": "nodemon --inspect index.js",
     "test": "echo 'tests are not implemented!'",
     "build:ui": "rm -rf build && cd ../fullstack-open-course/part2/phonebook && npm run build && cp -r build ../../../fullstack-open-course-part3/",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
@@ -14,7 +14,9 @@
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
+    "mongoose": "^7.2.2",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
